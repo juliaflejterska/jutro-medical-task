@@ -33,7 +33,7 @@ const Countries: NextPage<{ countries: GetCountriesQuery }> = ({
         <title>List of countries</title>
         <meta name="description" content="List of countries page" />
       </Head>
-      <main className="p-40 min-h-screen bg-black text-xl">
+      <main className="p-10 lg:px-40 lg:py-20 min-h-screen bg-black text-xl">
         <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-20">
           {countries.countries.map((country) => (
             <Link
