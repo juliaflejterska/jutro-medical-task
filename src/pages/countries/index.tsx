@@ -28,7 +28,7 @@ const Countries: NextPage<{ countries: GetCountriesQuery }> = ({
         <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-20">
           {countries.countries.map((country) => (
             <Link
-              className="p-10 bg-white rounded flex flex-col flex items-center hover:text-violet-600"
+              className="p-10 h-40 bg-white rounded flex flex-col flex items-center justify-center hover:text-violet-600"
               href="/countries/[code]"
               as={`/countries/${country.code}`}
               key={country.code}
