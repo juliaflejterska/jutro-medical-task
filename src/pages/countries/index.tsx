@@ -1,19 +1,10 @@
 import Link from "next/link";
 import { request } from "graphql-request";
-import { COUNTRIES_URL } from "../../../constans/constans";
+import { COUNTRIES_URL } from "../../GraphQL/constans";
 import { GetStaticProps, NextPage } from "next";
 import { GetCountriesQuery } from "../../../gql/graphql";
-import { graphql } from "../../../gql";
 import Head from "next/head";
-
-export const GET_COUNTRIES = graphql(`
-  query GetCountries {
-    countries {
-      name
-      code
-    }
-  }
-`);
+import { GET_COUNTRIES } from "../../GraphQL/Queries";
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await request(COUNTRIES_URL, GET_COUNTRIES);

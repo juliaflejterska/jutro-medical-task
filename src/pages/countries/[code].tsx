@@ -1,30 +1,9 @@
 import { request } from "graphql-request";
-import { COUNTRIES_URL } from "../../../constans/constans";
-import { graphql } from "../../../gql";
+import { COUNTRIES_URL } from "../../GraphQL/constans";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { GetOneCountryQuery } from "../../../gql/graphql";
 import Head from "next/head";
-
-const GET_ONE_COUNTRY = graphql(`
-  query GetOneCountry($code: ID!) {
-    country(code: $code) {
-      name
-      code
-      emoji
-      languages {
-        name
-      }
-    }
-  }
-`);
-
-const GET_ALL_COUNTRIES = graphql(`
-  query GetAllCountries {
-    countries {
-      code
-    }
-  }
-`);
+import { GET_ALL_COUNTRIES, GET_ONE_COUNTRY } from "../../GraphQL/Queries";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await request(COUNTRIES_URL, GET_ALL_COUNTRIES);

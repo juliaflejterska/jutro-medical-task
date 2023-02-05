@@ -1,17 +1,8 @@
 import { useQuery } from "@apollo/client";
-import gql from "graphql-tag";
 import Link from "next/link";
 import { NextPage } from "next";
 import Head from "next/head";
-
-const GET_POLAND = gql`
-  query GetPoland {
-    country(code: "PL") {
-      name
-      code
-    }
-  }
-`;
+import { GET_POLAND } from "../GraphQL/Queries";
 
 const Profile: NextPage = () => {
   const { loading, error, data } = useQuery(GET_POLAND);
@@ -34,10 +25,10 @@ const Profile: NextPage = () => {
             {data && (
               <Link
                 href="/countries/[code]"
-                as={`/countries/${data.country.code}`}
+                as={`/countries/${data.country?.code}`}
               >
                 <div className="p-10 w-full h-full bg-white rounded cursor-pointer hover:text-violet-600">
-                  {data.country.name} ({data.country.code})
+                  {data.country?.name} ({data.country?.code})
                 </div>
               </Link>
             )}
