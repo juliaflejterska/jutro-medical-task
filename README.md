@@ -1,27 +1,22 @@
-# Next.js + Tailwind CSS Example
+<h1> <i> Jutro Medical recruitment task </i> </h1>
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<h3> https://jutro-medical-task.vercel.app/ </h3>
 
-## Deploy your own
+---
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+Simple <b> Next.js with TypeScript </b> application.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+---
 
-## How to use
+Application has 4 pages:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+<ul>
+<li><b>/</b> - homepage which contains 2 links redirecting to page with list of countries or to your profile page;</li>
+<li><b>/countries</b> - where all available countries are fetched and listed, so you can select one and move to its subpage; </li>
+<li><b>/countres/:code</b> - which retrieves information about the selected country; </li>
+<li><b>/profile</b> - where basic information about Poland (as it is your profile's country) is displayed. Clicking on a tile takes you to a subpage with more details.</li>
+</ul>
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+---
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Data is fetched from the GraphQL API at https://countries.trevorblades.com.
